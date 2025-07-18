@@ -117,9 +117,9 @@ img {
   text-align: center;
   padding: 0 1.5rem;
   color: var(--text-color);
-  /* Light hero backdrop with subtle coral accents to evoke the app’s airy vibe. */
-  background-image: radial-gradient(circle at top right, rgba(255, 79, 90, 0.15), transparent 60%),
-    radial-gradient(circle at bottom left, rgba(255, 79, 90, 0.08), transparent 60%);
+  /* Remove the decorative gradients behind the hero so the animated slides
+     transition seamlessly.  The hero still uses the global background colour. */
+  background-image: none;
   background-color: var(--bg-color);
 
   /* Ensure any absolutely positioned background layers (e.g. animated slides)
@@ -156,8 +156,8 @@ img {
   background-position: center;
   opacity: 0;
   animation: fashionFade 12s infinite;
-  /* Darken the images further to improve contrast against the text */
-  filter: brightness(0.5);
+  /* Darken the images to improve contrast against the text while still allowing details to show */
+  filter: brightness(0.6);
 }
 
 /* Assign specific images and stagger the animation for each slide */
@@ -177,10 +177,10 @@ img {
    then overlaps with the next slide during the fade to avoid a white flash.
    There is never a moment when both slides are fully transparent. */
 @keyframes fashionFade {
-  0%, 45% {
+  0%, 48% {
     opacity: 1;
   }
-  55%, 100% {
+  52%, 100% {
     opacity: 0;
   }
 }
@@ -194,10 +194,11 @@ img {
   position: relative;
   max-width: 700px;
   z-index: 2;
-  /* Apply a translucent backdrop with blur to improve text legibility on busy backgrounds */
-  background-color: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  padding: 2rem 1.5rem;
+  /* Apply a subtler translucent backdrop with a smaller footprint to let more of the
+     animated images show through while still ensuring the text remains legible. */
+  background-color: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(8px);
+  padding: 1.5rem 1.25rem;
   border-radius: var(--border-radius);
 }
 
