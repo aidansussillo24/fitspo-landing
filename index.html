@@ -10,10 +10,11 @@
   <!-- Open Graph tags -->
   <meta property="og:title" content="FitSpo – Fashion Social Network" />
   <meta property="og:description" content="Join the FitSpo waitlist to discover, share and decide what to wear with friends and fashion lovers." />
-  <meta property="og:image" content="assets/hero-bg.png" />
+    <!-- Use the app preview as the open graph image -->
+    <meta property="og:image" content="app-preview.jpg" />
   <meta property="og:type" content="website" />
-  <!-- Favicon: simple coral square as inline SVG data URI -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSIjRkY0RjVBIi8+PC9zdmc+" />
+    <!-- Favicon: use the FitSpo icon (PNG) as the favicon -->
+    <link rel="icon" type="image/png" href="fitspo-icon.png" />
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <!-- Font Awesome Icons -->
@@ -31,10 +32,11 @@
   <!-- Hero Section -->
   <header class="hero">
     <nav class="navbar">
-      <div class="logo">
-        <span class="logo-icon"></span>
-        <span>FitSpo</span>
-      </div>
+          <div class="logo">
+            <!-- Replace the coral square with the real FitSpo icon -->
+            <img src="fitspo-icon.png" alt="FitSpo logo" />
+            <span>FitSpo</span>
+          </div>
       <ul class="nav-links">
         <li><a href="#features">Features</a></li>
         <li><a href="#faq">FAQ</a></li>
@@ -92,10 +94,10 @@
     <div class="preview-container">
       <div class="phone phone-left">
         <!-- App screenshot inserted inside phone frame -->
-        <img src="assets/app-preview.jpg" alt="FitSpo app preview" />
+            <img src="app-preview.jpg" alt="FitSpo app preview" />
       </div>
       <div class="phone phone-right">
-        <img src="assets/app-preview.jpg" alt="FitSpo app preview" />
+            <img src="app-preview.jpg" alt="FitSpo app preview" />
       </div>
     </div>
   </section>
@@ -141,7 +143,8 @@
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-logo">
-        <span class="logo-icon"></span>
+        <!-- Use the FitSpo icon in the footer as well -->
+        <img src="fitspo-icon.png" alt="FitSpo logo" />
         <span>FitSpo</span>
       </div>
       <ul class="footer-links">
