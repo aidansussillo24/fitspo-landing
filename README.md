@@ -1,11 +1,13 @@
 # FitSpo Landing Page
 
-This repository contains the source code for the **FitSpo** early‑access landing page. The page is a single‑page site built with vanilla HTML, CSS and minimal JavaScript. It uses a dark, fashion‑forward design with coral accents to evoke the brand and invites visitors to join the waitlist via a simple email form.
+This repository contains the source code for the **FitSpo** early‑access landing page. The page is a single‑page site built with vanilla HTML, CSS and minimal JavaScript.
+
+The latest iteration adopts a **light, minimalist aesthetic** inspired by the FitSpo mobile app.  A soft cream background paired with dark typography makes content easy to read, while coral accents draw attention to calls‑to‑action.  The layout remains mobile‑first and fully responsive.  Visitors are invited to join the waitlist via two simple email forms that integrate with Netlify Forms.
 
 ## Structure
 
 - `index.html` – the main HTML document containing the page markup. This includes meta tags for SEO and Open Graph, the hero section, feature highlights, app preview, FAQ accordion and footer. Two identical waitlist forms are included and configured for Netlify Forms (via `data-netlify="true"`).
-- `global.css` – global stylesheet defining the dark theme, responsive layout, cards and animations. Adjust variables at the top of this file to tweak colours or spacing.
+- `global.css` – global stylesheet defining the light theme, responsive layout, card styling and animations. Adjust the CSS custom properties at the top of this file to tweak colours or spacing.
 - `script.js` – enhances the waitlist forms by intercepting submission, posting data via `fetch` and showing a toast notification. The Netlify backend still receives the form data.
 - `robots.txt` – blocks search engines from indexing this pre‑launch site.
 - `assets/` – contains image assets such as `logo.png` and `hero-bg.png`. Replace these files to customise the brand or hero backdrop.

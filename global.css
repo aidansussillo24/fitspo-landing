@@ -10,11 +10,20 @@
 
 /* Colour and spacing variables */
 :root {
-  --bg-color: #0e0e0e;        /* primary background: deep charcoal/black */
-  --text-color: #f7f7f7;      /* cream/near‑white for high contrast text */
+  /*
+    Palette updated to better match the in‑app aesthetic.  The primary
+    background is now a soft off‑white, text is dark for contrast and
+    legibility, and cards use true white with a subtle shadow.  Coral
+    remains our accent colour for calls‑to‑action.  Adjust the values
+    below to tweak the look and feel globally.
+  */
+  --bg-color: #f7f7f7;        /* light cream background used across sections */
+  --text-color: #0e0e0e;      /* dark charcoal text for excellent contrast */
   --accent: #ff4f5a;          /* coral accent for buttons and highlights */
-  --muted-text: #aaaaaa;      /* muted grey for secondary text */
-  --card-bg: #161616;         /* slightly lighter panel background */
+  --muted-text: #666666;      /* muted grey for secondary text */
+  --card-bg: #ffffff;         /* pure white cards to float on the cream background */
+  --navbar-bg: rgba(255, 255, 255, 0.8); /* semi‑transparent navbar */
+  --footer-bg: #fafafa;       /* slightly darker than background for footer */
   --border-radius: 8px;
   --transition: 0.3s;
   --font-family: 'Inter', sans-serif;
@@ -62,8 +71,9 @@ img {
   justify-content: space-between;
   align-items: center;
   z-index: 100;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
+  background: var(--navbar-bg);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .logo {
@@ -107,16 +117,15 @@ img {
   text-align: center;
   padding: 0 1.5rem;
   color: var(--text-color);
-  /* Use a subtle radial gradient for the hero backdrop instead of an external image. */
-  background-image: radial-gradient(circle at top right, rgba(255, 79, 90, 0.2), rgba(0, 0, 0, 0.8) 60%),
-    radial-gradient(circle at bottom left, rgba(255, 79, 90, 0.1), rgba(0, 0, 0, 0.9) 60%);
+  /* Light hero backdrop with subtle coral accents to evoke the app’s airy vibe. */
+  background-image: radial-gradient(circle at top right, rgba(255, 79, 90, 0.15), transparent 60%),
+    radial-gradient(circle at bottom left, rgba(255, 79, 90, 0.08), transparent 60%);
+  background-color: var(--bg-color);
 }
 
+/* Remove the dark overlay for light theme */
 .hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.7) 100%);
+  content: none;
 }
 
 .hero-content {
@@ -152,7 +161,7 @@ img {
   width: 100%;
   padding: 0.75rem 1rem;
   border-radius: var(--border-radius);
-  border: 1px solid #333;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: var(--card-bg);
   color: var(--text-color);
   font-size: 1rem;
@@ -164,7 +173,7 @@ img {
 
 .signup-form .btn {
   background-color: var(--accent);
-  color: var(--bg-color);
+  color: #ffffff;
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: var(--border-radius);
@@ -182,7 +191,7 @@ img {
 .social-proof {
   padding: 1rem 1.5rem;
   text-align: center;
-  background-color: #111;
+  background-color: var(--footer-bg);
 }
 
 .social-proof strong {
@@ -212,6 +221,7 @@ img {
   background-color: var(--card-bg);
   padding: 2rem 1.5rem;
   border-radius: var(--border-radius);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   transition: transform var(--transition);
 }
 
@@ -255,8 +265,8 @@ img {
   height: 400px;
   border-radius: 30px;
   background: var(--card-bg);
-  border: 2px solid #333;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
 }
 
 .phone::before {
@@ -266,8 +276,8 @@ img {
   width: 100%;
   height: 100%;
   border-radius: 28px;
-  background: linear-gradient(180deg, #222, #111);
-  opacity: 0.6;
+  background: linear-gradient(180deg, #fafafa, #f0f0f0);
+  opacity: 0.5;
 }
 
 .phone-left {
@@ -286,7 +296,7 @@ img {
 .cta {
   padding: 4rem 1.5rem;
   text-align: center;
-  background-color: #111;
+  background-color: var(--footer-bg);
 }
 
 .cta h2 {
@@ -319,6 +329,7 @@ img {
   border-radius: var(--border-radius);
   margin-bottom: 1rem;
   padding: 1rem 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .accordion summary {
@@ -335,7 +346,7 @@ img {
 
 /* Footer */
 .footer {
-  background-color: #111;
+  background-color: var(--footer-bg);
   color: var(--muted-text);
   padding: 2rem 1.5rem;
 }
