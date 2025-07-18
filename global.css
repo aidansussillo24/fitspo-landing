@@ -121,6 +121,66 @@ img {
   background-image: radial-gradient(circle at top right, rgba(255, 79, 90, 0.15), transparent 60%),
     radial-gradient(circle at bottom left, rgba(255, 79, 90, 0.08), transparent 60%);
   background-color: var(--bg-color);
+
+  /* Ensure any absolutely positioned background layers (e.g. animated slides)
+     are clipped to the hero and do not spill out. */
+  overflow: hidden;
+}
+
+/*
+  Animated hero background
+
+  To give the hero a dynamic, video‑like feel without hosting a heavy
+  video file, we cross‑fade between a couple of illustrated scenes
+  depicting fashionable people.  Each slide fills the hero, and the
+  animation loops seamlessly.
+*/
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-video .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: fashionFade 12s infinite;
+  /* Dim the images slightly so the text remains readable */
+  filter: brightness(0.7);
+}
+
+/* Assign specific images and stagger the animation for each slide */
+.hero-video .slide1 {
+  background-image: url('assets/fashion-bg1.png');
+  animation-delay: 0s;
+}
+
+.hero-video .slide2 {
+  background-image: url('assets/fashion-bg2.png');
+  animation-delay: 6s;
+}
+
+/* Keyframes to cross‑fade slides.  Each slide stays fully opaque
+   for a portion of the animation then fades out, giving the
+   impression of movement. */
+@keyframes fashionFade {
+  0%, 40% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
 }
 
 /* Remove the dark overlay for light theme */
