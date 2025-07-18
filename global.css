@@ -156,8 +156,8 @@ img {
   background-position: center;
   opacity: 0;
   animation: fashionFade 12s infinite;
-  /* Dim the images slightly so the text remains readable */
-  filter: brightness(0.7);
+  /* Darken the images further to improve contrast against the text */
+  filter: brightness(0.5);
 }
 
 /* Assign specific images and stagger the animation for each slide */
@@ -173,14 +173,14 @@ img {
   animation-delay: 6s;
 }
 
-/* Keyframes to cross‑fade slides.  Each slide stays fully opaque
-   for a portion of the animation then fades out, giving the
-   impression of movement. */
+/* Keyframes to cross‑fade slides.  Each slide remains visible for longer,
+   then overlaps with the next slide during the fade to avoid a white flash.
+   There is never a moment when both slides are fully transparent. */
 @keyframes fashionFade {
-  0%, 40% {
+  0%, 45% {
     opacity: 1;
   }
-  50%, 100% {
+  55%, 100% {
     opacity: 0;
   }
 }
@@ -193,7 +193,12 @@ img {
 .hero-content {
   position: relative;
   max-width: 700px;
-  z-index: 1;
+  z-index: 2;
+  /* Apply a translucent backdrop with blur to improve text legibility on busy backgrounds */
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 2rem 1.5rem;
+  border-radius: var(--border-radius);
 }
 
 .hero h1 {
