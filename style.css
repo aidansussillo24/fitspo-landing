@@ -1,0 +1,335 @@
+/*
+  FitSpo landing page styles
+
+  This stylesheet defines the visual presentation for the FitSpo landing page.
+  It uses a modern colour palette, responsive layouts and subtle animations to
+  engage visitors. Variables at the top make it easy to tweak colours and
+  spacing.
+*/
+
+/* Colour and font variables */
+:root {
+  --primary-color: #6c63ff; /* brand purple */
+  --primary-dark: #544bd6;
+  --secondary-color: #00bfa6; /* accent teal */
+  --bg-light: #f8f9fa;
+  --text-color: #333;
+  --heading-color: #222;
+  --border-radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+/* Navigation Bar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.primary-btn {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.primary-btn:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  /* Use a vibrant gradient instead of an image for the hero background. This
+     avoids embedding any external text in the background and provides a clean,
+     energetic feel. */
+  background-image: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background-size: cover;
+  background-position: center;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: brightness(0.6);
+}
+
+.hero-content {
+  position: relative;
+  max-width: 800px;
+  padding: 2rem;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #f5f5f5;
+}
+
+/* Features Section */
+.features-section {
+  padding: 6rem 2rem 4rem;
+  background-color: var(--bg-light);
+  text-align: center;
+}
+
+.features-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--heading-color);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card i {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--heading-color);
+}
+
+.feature-card p {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin: 0;
+}
+
+/* Call To Action Section */
+.cta-section {
+  padding: 5rem 2rem;
+  text-align: center;
+  background-image: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: #fff;
+}
+
+.cta-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.signup-form input[type="email"] {
+  padding: 0.75rem 1rem;
+  width: 100%;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+}
+
+.signup-form input[type="email"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
+}
+
+.signup-form button {
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Download Section */
+.download-section {
+  padding: 5rem 2rem;
+  text-align: center;
+  background-color: var(--bg-light);
+}
+
+.download-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--heading-color);
+}
+
+.store-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.store-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #fff;
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  color: var(--primary-dark);
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.store-btn i {
+  font-size: 1.5rem;
+}
+
+.store-btn:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--heading-color);
+}
+
+.contact-section p {
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+.contact-section a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  padding: 2rem;
+  background-color: #f1f1f1;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .features-section {
+    padding-top: 5rem; /* compensate nav height */
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+}
