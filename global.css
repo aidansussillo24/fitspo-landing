@@ -375,6 +375,12 @@ img {
   color: var(--text-color);
 }
 
+/* Ensure the footer logo icon doesn't overwhelm the footer */
+.footer-logo img {
+  width: 32px;
+  height: 32px;
+}
+
 /* Simple logo placeholder – a coral square preceding the wordmark */
 .logo-icon {
   display: inline-block;
