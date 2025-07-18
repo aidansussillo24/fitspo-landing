@@ -146,6 +146,14 @@ img {
   color: var(--muted-text);
 }
 
+/* Additional tagline in hero for more descriptive copy */
+.hero .tagline {
+  margin-top: -0.5rem;
+  margin-bottom: 2rem;
+  font-size: 1.125rem;
+  color: var(--muted-text);
+}
+
 /* Signup Form */
 .signup-form {
   display: flex;
@@ -379,6 +387,25 @@ img {
 .footer-logo img {
   width: 32px;
   height: 32px;
+}
+
+/* Generic button styles used for anchors and buttons */
+.btn {
+  background-color: var(--accent);
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.btn:hover {
+  background-color: #e33d47;
+  transform: translateY(-2px);
 }
 
 /* Simple logo placeholder – a coral square preceding the wordmark */
