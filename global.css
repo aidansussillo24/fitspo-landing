@@ -269,6 +269,14 @@ img {
   box-shadow: 0 8px 16px rgba(0,0,0,0.08);
 }
 
+/* Place screenshot inside the phone frame */
+.phone img {
+  width: 100%;
+  height: 100%;
+  border-radius: 28px;
+  object-fit: cover;
+}
+
 .phone::before {
   content: '';
   position: absolute;
