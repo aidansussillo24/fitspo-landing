@@ -162,12 +162,14 @@ img {
 
 /* Assign specific images and stagger the animation for each slide */
 .hero-video .slide1 {
-  background-image: url('assets/fashion-bg1.png');
+  /* Use the root-level images instead of an assets subfolder */
+  background-image: url('fashion-bg1.png');
   animation-delay: 0s;
 }
 
 .hero-video .slide2 {
-  background-image: url('assets/fashion-bg2.png');
+  /* Use the root-level images instead of an assets subfolder */
+  background-image: url('fashion-bg2.png');
   animation-delay: 6s;
 }
 
